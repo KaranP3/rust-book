@@ -1,5 +1,5 @@
-mod common_concepts;
+mod ownership;
 
 fn main() {
-    common_concepts::run();
+    ownership::run();
 }
