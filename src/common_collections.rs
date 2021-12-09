@@ -13,10 +13,15 @@ pub fn run() {
            key.
     */
 
+    // -------------------------------------------------------------
+
     /*
-     vectors
+        vectors
     */
-    // let v: Vec<i32> = Vec::new(); // we need the type annotation beceasue it's empty
+
+    // let v: Vec<i32> = Vec::new();
+    // we need the type annotation beceasue it's empty
+
     let mut v = vec![1, 2, 3, 4]; // with macros
 
     // adding elements
@@ -63,4 +68,42 @@ pub fn run() {
     ];
 
     println!("row: {:?}", row);
+
+    /*
+       strings
+    */
+    let s = String::new();
+
+    // string slice(str) to String
+    let s1 = "Hello, ".to_string();
+
+    println!("s: {}, s1: {}", s, s1);
+
+    // appending
+    let mut s2 = String::from("foo");
+    println!("s2 before: {}", s2);
+
+    s2.push_str("bar");
+    println!("s2 after push_Str: {:?}", s2);
+
+    let s3 = s1 + &s2;
+    println!("s3: {}", s3);
+
+    let tic = String::from("tic");
+    let tac = String::from("tac");
+    let toe = String::from("toe");
+
+    let tic_tac_toe = format!("{}-{}-{}", tic, tac, toe);
+    println!("{}", tic_tac_toe);
+
+    // iterating over strings
+    let hello = String::from("hello");
+
+    for s in hello.chars() {
+        println!("chars: {}", s);
+    }
+
+    for s in hello.bytes() {
+        println!("bytes: {}", s);
+    }
 }
