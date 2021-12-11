@@ -1,4 +1,5 @@
-use std::fmt::Debug;
+use core::panic;
+use std::{collections::HashMap, fmt::Debug};
 
 pub fn run() {
     // unlike the built-in array and tuple types, the data these
@@ -106,4 +107,34 @@ pub fn run() {
     for s in hello.bytes() {
         println!("bytes: {}", s);
     }
+
+    // hashmaps
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let teams = vec!["Blue", "Yellow"];
+    let initial_scores = vec![10, 50];
+
+    let scores: HashMap<_, _> = teams.into_iter().zip(initial_scores).collect();
+    println!("{:?}", scores); // the hashmap is now the owner of the vectors
+
+    let blue_score = match scores.get("Blue") {
+        Some(val) => val,
+        None => panic!("key did not exist"),
+    };
+    println!("{}", blue_score);
+
+    // updating values
+    let text = "hello world wonderful world";
+
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{:?}", map);
 }
