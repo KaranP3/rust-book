@@ -1,5 +1,5 @@
-mod common_collections;
+mod errors;
 
 fn main() {
-    common_collections::run();
+    errors::run();
 }
