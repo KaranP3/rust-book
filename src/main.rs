@@ -1,5 +1,5 @@
-mod errors;
+mod generics;
 
 fn main() {
-    errors::run();
+    generics::run();
 }
