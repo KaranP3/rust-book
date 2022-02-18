@@ -1,5 +1,5 @@
-mod traits;
+mod lifetimes;
 
 fn main() {
-    traits::run();
+    lifetimes::run();
 }
