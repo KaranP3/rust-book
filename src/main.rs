@@ -1,5 +1,5 @@
-mod lifetimes;
+mod closures;
 
 fn main() {
-    lifetimes::run();
+    closures::run();
 }
