@@ -1,5 +1,5 @@
-mod iterators;
+mod smart_pointers;
 
 fn main() {
-    iterators::run();
+    smart_pointers::run();
 }
